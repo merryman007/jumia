@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumia - Best Deals Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .jumia-orange { background-color: #f68b1e; }
+        .jumia-orange-light { background-color: #ff9900; }
+        .jumia-dark { background-color: #2c2c2c; }
+        .hero-bg { 
+            background: linear-gradient(135deg, #f68b1e 0%, #ff9900 100%);
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .category-card:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <!-- Top Bar -->
+        <div class="bg-gray-100 py-2">
+            <div class="max-w-7xl mx-auto px-4 flex justify-between items-center text-sm">
+                <div class="flex space-x-4">
+                    <span><i class="fas fa-phone text-orange-500"></i> +234 1 234 5678</span>
+                    <span><i class="fas fa-envelope text-orange-500"></i> help@jumia.com.ng</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-orange-500">Sell on Jumia</a>
+                    <a href="#" class="hover:text-orange-500">Customer Care</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="jumia-orange text-white px-3 py-2 rounded font-bold text-xl">
+                        Jumia
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-2xl mx-8">
+                    <div class="relative">
+                        <input 
+                            type="text" 
+                            placeholder="Search products, brands and categories..."
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                            id="searchInput"
+                        >
+                        <button class="absolute right-0 top-0 jumia-orange text-white px-6 py-3 rounded-r-lg hover:bg-orange-600">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Account & Cart -->
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center space-x-2 cursor-pointer hover:text-orange-500">
+                        <i class="fas fa-user text-xl"></i>
+                        <div>
+                            <div class="text-sm">Hi,</div>
+                            <div class="font-semibold">Account</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2 cursor-pointer hover:text-orange-500">
+                        <i class="fas fa-heart text-xl"></i>
+                        <span>Wishlist</span>
+                    </div>
+                    <div class="flex items-center space-x-2 cursor-pointer hover:text-orange-500 relative">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span>Cart</span>
+                        <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs" id="cartCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="bg-white border-t">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex items-center space-x-8 py-3">
+                    <div class="flex items-center space-x-2 cursor-pointer hover:text-orange-500">
+                        <i class="fas fa-bars"></i>
+                        <span class="font-semibold">All Categories</span>
+                    </div>
+                    <a href="#" class="hover:text-orange-500">Electronics</a>
+                    <a href="#" class="hover:text-orange-500">Fashion</a>
+                    <a href="#" class="hover:text-orange-500">Home & Kitchen</a>
+                    <a href="#" class="hover:text-orange-500">Health & Beauty</a>
+                    <a href="#" class="hover:text-orange-500">Sports</a>
+                    <a href="#" class="hover:text-orange-500">Baby Products</a>
+                    <a href="#" class="hover:text-orange-500">Books</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4">Best Deals Online</h1>
+            <p class="text-xl mb-8">Discover amazing products at unbeatable prices</p>
+            <button class="bg-white text-orange-500 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                Shop Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Shop by Category</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer transition-all duration-300">
+                    <i class="fas fa-mobile-alt text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="font-semibold">Phones</h3>
+                </div>
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer transition-all duration-300">
+                    <i class="fas fa-laptop text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="font-semibold">Computers</h3>
+                </div>
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer transition-all duration-300">
+                    <i class="fas fa-tshirt text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="font-semibold">Fashion</h3>
+                </div>
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer transition-all duration-300">
+                    <i class="fas fa-home text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="font-semibold">Home</h3>
+                </div>
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer transition-all duration-300">
+                    <i class="fas fa-dumbbell text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="font-semibold">Sports</h3>
+                </div>
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer transition-all duration-300">
+                    <i class="fas fa-book text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="font-semibold">Books</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flash Sales -->
+    <section class="py-12 bg-red-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-3xl font-bold text-red-600">
+                    <i class="fas fa-bolt"></i> Flash Sales
+                </h2>
+                <div class="flex items-center space-x-2 text-red-600">
+                    <span>Time Left:</span>
+                    <div class="bg-red-600 text-white px-3 py-1 rounded" id="hours">12</div>
+                    <span>:</span>
+                    <div class="bg-red-600 text-white px-3 py-1 rounded" id="minutes">34</div>
+                    <span>:</span>
+                    <div class="bg-red-600 text-white px-3 py-1 rounded" id="seconds">56</div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6" id="flashSales">
+                <!-- Flash sale products will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Featured Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6" id="featuredProducts">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="jumia-orange text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+            <p class="text-xl mb-8">Subscribe to get special offers, free giveaways, and exclusive deals!</p>
+            <div class="flex max-w-md mx-auto">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email"
+                    class="flex-1 px-4 py-3 rounded-l-lg text-gray-800 focus:outline-none"
+                >
+                <button class="bg-white text-orange-500 px-6 py-3 rounded-r-lg font-semibold hover:bg-gray-100">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="jumia-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-xl mb-4 text-orange-500">Jumia</h3>
+                    <p class="text-gray-300 mb-4">Your number one online shopping destination in Nigeria</p>
+                    <div class="flex space-x-4">
+                        <i class="fab fa-facebook text-xl hover:text-orange-500 cursor-pointer"></i>
+                        <i class="fab fa-twitter text-xl hover:text-orange-500 cursor-pointer"></i>
+                        <i class="fab fa-instagram text-xl hover:text-orange-500 cursor-pointer"></i>
+                        <i class="fab fa-youtube text-xl hover:text-orange-500 cursor-pointer"></i>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Let Us Help You</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-orange-500">Help Center</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-orange-500">How to shop</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">About Jumia</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-orange-500">About Us</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Careers</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Make Money with Jumia</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-orange-500">Sell on Jumia</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Become an Affiliate</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Advertise your Products</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Join KOL Program</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 Jumia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample product data
+        const products = [
+            {
+                id: 1,
+                name: "iPhone 15 Pro Max",
+                price: 450000,
+                originalPrice: 500000,
+                image: "https://via.placeholder.com/250x250/f68b1e/ffffff?text=iPhone+15",
+                rating: 4.8,
+                reviews: 245,
+                isFlashSale: true,
+                discount: 10
+            },
+            {
+                id: 2,
+                name: "Samsung Galaxy S24 Ultra",
+                price: 420000,
+                originalPrice: 480000,
+                image: "https://via.placeholder.com/250x250/f68b1e/ffffff?text=Samsung+S24",
+                rating: 4.7,
+                reviews: 189,
+                isFlashSale: true,
+                discount: 12
+            },
+            {
+                id: 3,
+                name: "MacBook Pro M3",
+                price: 850000,
+                originalPrice: 950000,
+                image: "https://via.placeholder.com/250x250/f68b1e/ffffff?text=MacBook+Pro",
+                rating: 4.9,
+                reviews: 134,
+                isFlashSale: false,
+                discount: 11
+            },
+            {
+                id: 4,
+                name: "Sony WH-1000XM5",
+                price: 125000,
+                originalPrice: 150000,
+                image: "https://via.placeholder.com/250x250/f68b1e/ffffff?text=Sony+Headphones",
+                rating: 4.6,
+                reviews: 278,
+                isFlashSale: true,
+                discount: 17
+            },
+            {
+                id: 5,
+                name: "Nike Air Max 270",
+                price: 45000,
+                originalPrice: 55000,
+                image: "https://via.placeholder.com/250x250/f68b1e/ffffff?text=Nike+Shoes",
+                rating: 4.5,
+                reviews: 321,
+                isFlashSale: false,
+                discount: 18
+            },
+            {
+                id: 6,
+                name: "LG 55\" OLED TV",
+                price: 750000,
+                originalPrice: 850000,
+                image: "https://via.placeholder.com/250x250/f68b1e/ffffff?text=LG+OLED+TV",
+                rating: 4.7,
+                reviews: 156,
+                isFlashSale: true,
+                discount: 12
+            }
+        ];
+
+        let cart = [];
+
+        // Format price in Naira
+        function formatPrice(price) {
+            return `₦${price.toLocaleString()}`;
+        }
+
+        // Create product card HTML
+        function createProductCard(product) {
+            const discountBadge = product.discount > 0 ? 
+                `<div class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">-${product.discount}%</div>` : '';
+            
+            const originalPriceHTML = product.originalPrice > product.price ? 
+                `<span class="text-gray-400 line-through text-sm">${formatPrice(product.originalPrice)}</span>` : '';
+
+            return `
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 relative">
+                    ${discountBadge}
+                    <div class="relative">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 right-2 bg-white rounded-full p-2 shadow-md hover:bg-red-50 transition">
+                            <i class="far fa-heart text-gray-400 hover:text-red-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2 truncate">${product.name}</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                ${Array(5).fill().map((_, i) => 
+                                    `<i class="fas fa-star ${i < Math.floor(product.rating) ? '' : 'text-gray-300'}"></i>`
+                                ).join('')}
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(${product.reviews})</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div>
+                                <div class="text-xl font-bold text-orange-500">${formatPrice(product.price)}</div>
+                                ${originalPriceHTML}
+                            </div>
+                        </div>
+                        <button 
+                            onclick="addToCart(${product.id})" 
+                            class="w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-600 transition"
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Add to cart function
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                cart.push(product);
+                updateCartCount();
+                showNotification(`${product.name} added to cart!`);
+            }
+        }
+
+        // Update cart count
+        function updateCartCount() {
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Initialize the page
+        function init() {
+            // Populate flash sales
+            const flashSalesContainer = document.getElementById('flashSales');
+            const flashSaleProducts = products.filter(p => p.isFlashSale).slice(0, 5);
+            flashSalesContainer.innerHTML = flashSaleProducts.map(createProductCard).join('');
+
+            // Populate featured products
+            const featuredContainer = document.getElementById('featuredProducts');
+            featuredContainer.innerHTML = products.slice(0, 8).map(createProductCard).join('');
+
+            // Start countdown timer
+            startCountdown();
+        }
+
+        // Countdown timer for flash sales
+        function startCountdown() {
+            let hours = 12;
+            let minutes = 34;
+            let seconds = 56;
+
+            setInterval(() => {
+                seconds--;
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                    if (minutes < 0) {
+                        minutes = 59;
+                        hours--;
+                        if (hours < 0) {
+                            hours = 23;
+                        }
+                    }
+                }
+
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }, 1000);
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = e.target.value.toLowerCase();
+                if (query) {
+                    showNotification(`Searching for "${query}"...`);
+                }
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
